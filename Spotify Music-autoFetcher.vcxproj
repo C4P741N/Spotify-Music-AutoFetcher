@@ -127,7 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Home.cpp" />
     <ClCompile Include="Spotify Music-autoFetcher.cpp" />
+    <ClCompile Include="UserInfoManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Home.h" />
+    <ClInclude Include="MusicCollector.h" />
+    <ClInclude Include="UserInfoManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
