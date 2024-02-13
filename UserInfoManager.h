@@ -8,7 +8,7 @@ class UserInfoManager
 public:
     UserInfoManager(const std::string& username, const std::string& password)
         : username(username), password(password), loginSuccess(false) {
-        loginSuccess = true;
+        loginSuccess = !username.empty() && !password.empty();
     }
     bool isLoginSuccess() const {
         return loginSuccess;

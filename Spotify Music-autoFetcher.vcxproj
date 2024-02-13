@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Casablanca.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="Spotify Music-autoFetcher.cpp" />
     <ClCompile Include="UserInfoManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Casablanca.h" />
     <ClInclude Include="Home.h" />
     <ClInclude Include="MusicCollector.h" />
     <ClInclude Include="UserInfoManager.h" />
