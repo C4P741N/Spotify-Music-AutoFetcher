@@ -1,5 +1,12 @@
-﻿  Home.cpp
-  Spotify Music-autoFetcher.cpp
-  UserInfoManager.cpp
-  Generating Code...
-  Spotify Music-autoFetcher.vcxproj -> Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\x64\Debug\Spotify Music-autoFetcher.exe
+﻿  Installing vcpkg dependencies to Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\vcpkg_installed\x64-windows\
+  "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\vcpkg.exe" install  --x-wait-for-lock --triplet "x64-windows" --vcpkg-root "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\\" "--x-manifest-root=Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\\" "--x-install-root=Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\vcpkg_installed\x64-windows\\" 
+  Fetching registry information from https://github.com/microsoft/vcpkg (HEAD)...
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets(183,5): warning : error: failed to fetch ref HEAD from repository https://github.com/microsoft/vcpkg
+  failed to execute: "C:\Program Files\Git\cmd\git.exe" "--git-dir=C:\Users\danco\AppData\Local\vcpkg\registries\git\.git" "--work-tree=C:\Users\danco\AppData\Local\vcpkg\registries\git" -c core.autocrlf=false fetch --update-shallow -- https://github.com/microsoft/vcpkg HEAD
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets(183,5): warning : error: git failed with exit code: (128).
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets(183,5): warning : error: 3716 bytes of body are still expected
+  fetch-pack: unexpected disconnect while reading sideband packet
+  fatal: early EOF
+  fatal: fetch-pack: invalid index-pack output
+  
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\scripts\buildsystems\msbuild\vcpkg.targets(183,5): error MSB3073: The command ""C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\vcpkg.exe" install  --x-wait-for-lock --triplet "x64-windows" --vcpkg-root "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\vcpkg\\" "--x-manifest-root=Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\\" "--x-install-root=Z:\Spotify-Music-autoFetcher\Spotify Music-autoFetcher\vcpkg_installed\x64-windows\\" " exited with code 1.
