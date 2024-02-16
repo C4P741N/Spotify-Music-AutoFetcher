@@ -72,9 +72,7 @@ private:
         //std::wstring userpass = std::wstring(user) + L":" + pass;
         //std::string base64EncodedCredentials = utility::conversions::to_base64(userpass);
 
-
         const wchar_t* widec_Userstr = _ConvertFromStringToWchar_t(user);
-
         const wchar_t* widec_Paswstr = _ConvertFromStringToWchar_t(pass);
 
         http_client_config config;
@@ -97,7 +95,7 @@ private:
         //uri access = uri(U("/v1/me/playlists"));
 
         // Build HTTP request
-        request.set_method(methods::GET);
+        //request.set_method(methods::GET);
         request.set_request_uri(builder.to_string());
 
         request.headers().add(L"Authorization", concatToken);
@@ -122,7 +120,7 @@ private:
         return token;
     }
 public:
-    int Connect(std::string user, std::string pasw) {
+    bool Connect(std::string user, std::string pasw) {
 
         try {
 
@@ -187,9 +185,10 @@ public:
         }
         catch (std::exception e) {
             std::cerr << "Error occurred during JSON serialization: " << e.what() << std::endl;
+            return false;
         }
 
-        return 0;
+        return true;
     }
 
 private:

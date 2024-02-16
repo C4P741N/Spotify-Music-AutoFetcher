@@ -8,13 +8,11 @@ class UserInfoManager
 {
 public:
     UserInfoManager(const std::string& username, const std::string& password)
-        : _Username(username), _Password(password), _IsLoginSuccess(false) {
-        //_IsLoginSuccess = !username.empty() && !password.empty();
-    }
+        : _Username(username)
+        , _Password(password)
+        , _IsLoginSuccess(fetch.Connect(_Username, _Password)) {}
 
     bool isLoginSuccess() const {
-        Casablanca fetch;
-        fetch.Connect(_Username, _Password);
         return _IsLoginSuccess;
     }
 
@@ -22,4 +20,5 @@ private:
     std::string _Username;
     std::string _Password;
     bool _IsLoginSuccess;
+    mutable Casablanca fetch;
 };
