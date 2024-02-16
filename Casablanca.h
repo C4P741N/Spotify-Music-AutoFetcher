@@ -85,8 +85,8 @@ private:
 private:
     uri_builder _CreateHeader(http_request request) {
         uri_builder builder(_url_fetch_all_playlist);
-        builder.append_query(U("param1"), U("value1"));
-        builder.append_query(U("param2"), U("value2"));
+        //builder.append_query(U("param1"), U("value1"));
+        //builder.append_query(U("param2"), U("value2"));
 
         const int bufferSize = strlen(_bearer) + strlen(_token) + 1;
 
@@ -136,7 +136,7 @@ public:
 
              // Create an HTTP client
             http_client_config config = _SetUserCredentials(user, pasw);
-            http_client client(_url_spotify, config);
+            http_client client(U("https://api.spotify.com", config));
 
             //// Prepare request URI and headers
             //uri_builder builder(_url_fetch_all_playlist);
@@ -192,7 +192,7 @@ public:
     }
 
 private:
-    const uri _url_spotify = uri(U("api.spotify.com"));
+    const uri _url_spotify = U("https://api.spotify.com");
     const uri _url_fetch_all_playlist = uri(U("/v1/me/playlists"));
     const char* _token = "1POdFZRZbvbqqillRxMr2z";
     const char* _bearer = "Bearer ";
