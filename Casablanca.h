@@ -184,7 +184,7 @@ public:
                     //std::wcout << jvalue.get().to_string();
         }
         catch (std::exception e) {
-            std::cerr << "Error occurred during JSON serialization: " << e.what() << std::endl;
+            std::cerr << "Error occurred : " << e.what() << std::endl;
             return false;
         }
 

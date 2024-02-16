@@ -17,6 +17,7 @@ class Home
 public:
     Home() {
         std::cout << "Setting things up...\n";
+        std::cout << "Session not found please login\n";
 
         std::cout << "Spotify username: ";
         std::string user_name;
@@ -28,10 +29,10 @@ public:
         UserInfoManager user(user_name, user_password);
 
         if (user.isLoginSuccess()) {
-            std::cout << "Login is a success\n";
+            std::cout << "Playlists succesfully downloaded\n";
         }
         else {
-            std::cout << "Login failed\n";
+            std::cout << "Process Failed\n";
         }
     }
 
