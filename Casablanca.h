@@ -52,8 +52,17 @@ class Casablanca
 //
 //        return uri_builder(); // You need to return a uri_builder object, adjust as per your needs
 //    }
+
 private:
-    http_client_config _SetUserCredentials(const wchar_t* user, const wchar_t* pass) {
+    const wchar_t* _ConvertFromStringToWchar_t(std::string value) {
+        std::wstring widestr = std::wstring(value.begin(), value.end());
+
+        const wchar_t* widecstr = widestr.c_str();
+
+        return widecstr;
+    }
+private:
+    http_client_config _SetUserCredentials(std::string user, std::string pass) {
         // Create a file stream to output file.
         //auto fileStream = std::make_shared<std::ostream>(U("results.html"));
         // Base64 encode the username:password
@@ -64,8 +73,12 @@ private:
         //std::string base64EncodedCredentials = utility::conversions::to_base64(userpass);
 
 
+        const wchar_t* widec_Userstr = _ConvertFromStringToWchar_t(user);
+
+        const wchar_t* widec_Paswstr = _ConvertFromStringToWchar_t(pass);
+
         http_client_config config;
-        credentials creds(user, pass);
+        credentials creds(widec_Userstr, widec_Paswstr);
         config.set_credentials(creds);
         //http_client client(U("https://api.prosper.com/"), config);
 
@@ -109,7 +122,7 @@ private:
         return token;
     }
 public:
-    int Connect() {
+    int Connect(std::string user, std::string pasw) {
 
         try {
 
@@ -121,8 +134,10 @@ public:
              //    --url https ://api.spotify.com/v1/me/playlists \
              //  --header 'Authorization: Bearer 1POdFZRZbvb...qqillRxMr2z'
 
+            
+
              // Create an HTTP client
-            http_client_config config = _SetUserCredentials(L"ggfg", L"nmnfdmf");
+            http_client_config config = _SetUserCredentials(user, pasw);
             http_client client(_url_spotify, config);
 
             //// Prepare request URI and headers

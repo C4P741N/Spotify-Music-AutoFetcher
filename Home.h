@@ -33,9 +33,6 @@ public:
         else {
             std::cout << "Login failed\n";
         }
-
-        Casablanca fetch;
-        fetch.Connect();
     }
 
 private:

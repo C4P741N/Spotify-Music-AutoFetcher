@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Casablanca.h"
 #include <string>
 #include <iostream>
 
@@ -7,15 +8,18 @@ class UserInfoManager
 {
 public:
     UserInfoManager(const std::string& username, const std::string& password)
-        : username(username), password(password), loginSuccess(false) {
-        loginSuccess = !username.empty() && !password.empty();
+        : _Username(username), _Password(password), _IsLoginSuccess(false) {
+        //_IsLoginSuccess = !username.empty() && !password.empty();
     }
+
     bool isLoginSuccess() const {
-        return loginSuccess;
+        Casablanca fetch;
+        fetch.Connect(_Username, _Password);
+        return _IsLoginSuccess;
     }
 
 private:
-    std::string username;
-    std::string password;
-    bool loginSuccess;
+    std::string _Username;
+    std::string _Password;
+    bool _IsLoginSuccess;
 };
